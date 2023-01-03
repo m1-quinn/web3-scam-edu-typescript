@@ -1,7 +1,7 @@
 import { ethers } from "ethers";
 import randomContractABI from '../contracts/randomContractABI.json';
 
-const randomContractAddress = '0xE295cE5572387AB0D7C7fb914E2e19d9D44AeaDb';
+const randomContractAddress = '0xE089C056388DA3Dddf53d9F4F210b1bB715a7998';
 const wethContractAddress = '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2';
 const amount = ethers.utils.parseEther("10");
 const ETHamount = ethers.utils.parseEther("0.001");

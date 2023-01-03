@@ -85,7 +85,7 @@ function App() {
           <Container>
             <Row>
               <Col style={{paddingTop:15}}>
-                <h4 style={{}}>This is meant for educational / testing purposes.</h4>
+                <h4>This is meant for educational / testing purposes.</h4>
               </Col>
              </Row>
               <Row>
@@ -206,11 +206,11 @@ function App() {
                     <h5>Do not confirm this transaction.</h5>
                     <h5>Contract you are interacting with is random and has not been audited.</h5>
                     <h5>Contract can be found
-                    <a href='https://etherscan.io/address/0xe295ce5572387ab0d7c7fb914e2e19d9d44aeadb'> here</a>
+                    <a href='https://etherscan.io/address/0xe089c056388da3dddf53d9f4f210b1bb715a7998'> here</a>
                     . Recently deployed contracts are found
                     <a href='https://etherscan.io/contractsVerified'> here.</a>
                     </h5>
-                    <h6>Updated 12/11/22</h6>
+                    <h6>Updated 1/2/22</h6>
                   </Col>
                 </Row>  
                 <Row>
