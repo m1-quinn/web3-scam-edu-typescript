@@ -210,7 +210,7 @@ function App() {
                     . Recently deployed contracts are found
                     <a href='https://etherscan.io/contractsVerified'> here.</a>
                     </h5>
-                    <h6>Updated 1/2/22</h6>
+                    <h6>Updated 1/2/23</h6>
                   </Col>
                 </Row>  
                 <Row>
