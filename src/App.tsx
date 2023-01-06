@@ -18,9 +18,7 @@ import { ApproveNFT, Mint, SafeTransferFrom, ContractSetApprovalForAll, UserSetA
 import { DepositWeth, SendEth, RandomContract } from './utils/misc';
 import { ClaimTokensTest, WethTest } from './utils/allowlistTesting';
 import { ListToken } from './utils/listNFT';
-
-
-
+import { DirectPage } from './helpers/linkOpener';
 
 const rpcUrl = `https://eth-mainnet.g.alchemy.com/v2/2keYns3kOrbdkxgnKgfqV7PnUvq2NzBX`;
 const injected = injectedModule()
@@ -43,15 +41,12 @@ createClient({
   source: "opensea.io"
 });
 
-
-
-
-
 function App() {
   const [account, setAccount] = useState<any | null>(null);
   const [{ wallet, connecting }, connect, disconnect] = useConnectWallet();
   const [ethersProvider, setEthersProvider] = useState<any | null>(null);
   const [signer, setSigner] = useState<any | null>(null);
+  const [linkText, setLinkText] = useState<any | null>(null)
 
   useEffect(() => {
     if (wallet) {
@@ -65,6 +60,14 @@ function App() {
       setSigner(ethersProvider.getSigner())
     }
   }, [ethersProvider])
+
+  useEffect(() => {
+    if(window.location.href.includes('scam-education')) {
+      setLinkText('Blocklist site here');
+    } else if(window.location.href.includes('scam-edu-blocklist')) {
+      setLinkText('Allowlist site here');
+    }
+  })
 
   const ConnectWalletButton = () => {
     return (
@@ -86,6 +89,7 @@ function App() {
             <Row>
               <Col style={{paddingTop:15}}>
                 <h4>This is meant for educational / testing purposes.</h4>
+                <h4 style={{color:'red', 'fontWeight':'bold', cursor:'pointer'}} onClick={DirectPage}>{linkText}</h4>
               </Col>
              </Row>
               <Row>
@@ -94,7 +98,7 @@ function App() {
                 </Col>
               </Row>
               <Container style={{paddingTop:15}}>
-                <h4 style={{color:'#FF5300'}}>ERC721 functions</h4>
+                <h4 style={{color:'#FF5300','fontWeight':'bold' }}>ERC721 functions</h4>
                 <Row>
                   <Col>
                     <Button onClick={() => Mint(account, signer)} style={{'font-size':15}}>Free Mint</Button>
@@ -137,7 +141,7 @@ function App() {
                 </Row>
               </Container>
               <Container style={{paddingTop:15}}>
-                <h4 style={{color:'#FF5300'}}>ERC20 functions</h4>
+                <h4 style={{color:'#FF5300','fontWeight':'bold'}}>ERC20 functions</h4>
                 <Row>
                   <Col>
                     <Button onClick={() => ClaimTokens(account, signer)} style={{'font-size':15}}>Claim Tokens</Button>
@@ -171,7 +175,7 @@ function App() {
                 </Row>
               </Container>
               <Container style={{paddingBottom:15}}>
-                <h4 style={{color: '#FF5300'}}>Allowlist Testing</h4>
+                <h4 style={{color: '#FF5300', 'fontWeight':'bold'}}>Allowlist Testing</h4>
                 <Row style={{paddingTop:15}}>
                   <Col>
                     <Button onClick={() => ClaimTokensTest(account, signer)} style={{'font-size':15}}>Not allowlisted</Button>
@@ -188,7 +192,7 @@ function App() {
                 </Row>
               </Container>
               <Container style={{paddingBottom:15}}>
-                <h4 style={{color:'#FF5300'}}>Misc</h4>
+                <h4 style={{color:'#FF5300', 'fontWeight':'bold'}}>Misc</h4>
                 <Row style={{paddingTop:15}}>
                   <Col>
                     <Button onClick={() => SendEth(account, signer)} style={{'font-size':15}}>Send ETH</Button>
