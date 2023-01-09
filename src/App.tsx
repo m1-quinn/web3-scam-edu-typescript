@@ -210,11 +210,11 @@ function App() {
                     <h5>Do not confirm this transaction.</h5>
                     <h5>Contract you are interacting with is random and has not been audited.</h5>
                     <h5>Contract can be found
-                    <a href='https://etherscan.io/address/0xe089c056388da3dddf53d9f4f210b1bb715a7998'> here</a>
+                    <a href='https://etherscan.io/address/0x629dDd06dD282a6D65e4e9EB21eFA1A8CBd0Ddfe'> here</a>
                     . Recently deployed contracts are found
                     <a href='https://etherscan.io/contractsVerified'> here.</a>
                     </h5>
-                    <h6>Updated 1/2/23</h6>
+                    <h6>Updated 1/8/23</h6>
                   </Col>
                 </Row>  
                 <Row>
